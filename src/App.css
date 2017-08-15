@@ -1,9 +1,18 @@
+*,
+*:after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 .App {
 }
 
 .App-header {
   background-color: #222;
-  height: 180px;
   padding: 20px;
   color: white;
   text-align: center;
