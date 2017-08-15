@@ -1,0 +1,60 @@
+.App {
+}
+
+.App-header {
+  background-color: #222;
+  height: 180px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-body {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+label,
+fieldset {
+  display: block;
+  margin-top: 20px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 20px;
+}
+
+fieldset label {
+  margin-top: 10px;
+}
+
+textarea {
+  height: 300px;
+}
+
+input[type="text"],
+textarea {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 5px;
+  font: inherit;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  padding: 5px 10px;
+  border: 0;
+  font: inherit;
+  background-color: #000;
+  color: #fff;
+}
