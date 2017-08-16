@@ -1,3 +1,47 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 *,
 *:after,
 *::before {
@@ -6,64 +50,59 @@
 
 html {
   box-sizing: border-box;
+  font-family: "Raleway", Arial, sans-serif;
 }
 
-.App {
-}
-
-.App-header {
-  background-color: #222;
+.content {
   padding: 20px;
-  color: white;
-  text-align: center;
-}
-
-.App-body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+}
+
+.page-header {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #caedff;
+  color: #977E68;
+}
+
+.page-header__heading {
+  line-height: 1;
+  font-size: calc(18px + 10vw);
+  font-family: "Shadows Into Light";
+}
+
+.page-header__date {
+  margin-top: calc(20px + 1.25vw);
+  margin-bottom: calc(20px + 1.25vw);
+  font-size: calc(20px + 1.25vw);
+}
+
+.page-header__address {
+  line-height: 1.25;
+}
+
+@media (min-width: 820px) {
+  .page-header__heading {
+    font-size: 100px;
+  }
+}
+
+.page-body {
   text-align: left;
 }
 
-.App-intro {
-  font-size: large;
+.page-body__heading {
+  margin-top: 40px;
+  line-height: 1;
+  font-size: 30px;
 }
 
-label,
-fieldset {
-  display: block;
-  margin-top: 20px;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-top: 20px;
-}
-
-fieldset label {
-  margin-top: 10px;
-}
-
-textarea {
-  height: 300px;
-}
-
-input[type="text"],
-textarea {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px 5px;
-  font: inherit;
-}
-
-input[type="submit"] {
-  margin-top: 20px;
-  padding: 5px 10px;
-  border: 0;
-  font: inherit;
-  background-color: #000;
-  color: #fff;
+.page-body__text {
+  margin-top: 40px;
 }

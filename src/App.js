@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
+import RSVPForm from './components/RSVPForm';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>Rich &amp; Izzy</h1>
-          <p>
-            May 5th, 2018<br/>
-            Long Furlong Barn,<br/>
-            Clapham,<br/>
-            Worthing<br/>
-            BN13 3XN
-          </p>
-
+      <div className="page">
+        <div className="page-header">
+          <div className="content">
+            <h1 className="page-header__heading">Rich &amp; Izzy</h1>
+            <p className="page-header__date">
+              05.05.2018
+            </p>
+            <p className="page-header__address">
+              Long Furlong Barn,<br/>
+              Clapham,<br/>
+              Worthing<br/>
+              BN13 3XN
+            </p>
+          </div>
         </div>
-        <div className="App-body">
-          <h2>RSVP</h2>
-          <p>We'd love to have you join us on the day, but let us know either way </p>
-          <form action="https://formspree.io/gosmondontour@outlook.com" method="POST">
-            <label>Your name: <input type="text" name="name"/></label>
-            <fieldset>
-              <legend>Will you be joining us?</legend>
-              <label><input type="radio" name="canAttend" value="yes"/> Yes :)</label>
-              <label><input type="radio" name="canAttend" value="no"/> No :(</label>
-            </fieldset>
-            <label>Any other message: <textarea name="message"></textarea></label>
-            <input type="submit" value="RSVP!"/>
-          </form>
+        <div className="page-body">
+          <div className="content">
+            <h2 className="page-body__heading">RSVP</h2>
+            <p className="page-body__text">
+              It'd be great if you could join us to celebrate our marriage on May the 5th 2018,
+              but please RSVP either way so that we can plan for the numbers.
+            </p>
+            <RSVPForm />
+          </div>
         </div>
       </div>
 
