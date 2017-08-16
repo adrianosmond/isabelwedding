@@ -9,8 +9,8 @@ class RSVPForm extends Component {
     name: '',
     nameTouched: false,
     nameValid: true,
-    canAttend: '',
-    canAttendValid: true,
+    attending: '',
+    attendingValid: true,
     message: ''
   }
 
@@ -26,8 +26,8 @@ class RSVPForm extends Component {
   scrollToError() {
     if (!this.state.nameValid) {
       ScrollTo.scrollTo(this.nameField, 10)
-    } else if (!this.state.canAttendValid) {
-      ScrollTo.scrollTo(this.canAttendField, 10)
+    } else if (!this.state.attendingValid) {
+      ScrollTo.scrollTo(this.attendingField, 10)
     }
   }
 
@@ -56,17 +56,17 @@ class RSVPForm extends Component {
 
   updateCanAttend(val) {
     this.setState({
-      canAttend: val,
-      canAttendValid: true
+      attending: val,
+      attendingValid: true
     })
   }
 
   validateCanAttend() {
-    const canAttendValid = this.state.canAttend !== '';
+    const attendingValid = this.state.attending !== '';
     this.setState({
-      canAttendValid
+      attendingValid
     });
-    return canAttendValid;
+    return attendingValid;
   }
 
   render() {
@@ -79,21 +79,21 @@ class RSVPForm extends Component {
         {
           !this.state.nameValid ? <p className="form__error">Please enter your name(s)</p> : ''
         }
-        <fieldset className="form__field" ref={(field) => { this.canAttendField = field }}>
+        <fieldset className="form__field" ref={(field) => { this.attendingField = field }}>
           <legend>Will you be joining us?</legend>
           <label className="form__control">
-            <input className="form__radio" type="radio" name="canAttend" value="yes" checked={this.state.canAttend==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} />
+            <input className="form__radio" type="radio" name="attending" value="yes" checked={this.state.attending==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} />
             <span className="form__control-indicator"></span>
             Yes <span role="img" aria-label="smiley face">&#x1F604;</span>
           </label>
           <label className="form__control">
-            <input className="form__radio" type="radio" name="canAttend" value="no" checked={this.state.canAttend==='no'} onChange={this.updateCanAttend.bind(this, 'no')} />
+            <input className="form__radio" type="radio" name="attending" value="no" checked={this.state.attending==='no'} onChange={this.updateCanAttend.bind(this, 'no')} />
             <span className="form__control-indicator"></span>
             No <span role="img" aria-label="crying face">&#x1F62D;</span>
           </label>
         </fieldset>
         {
-          !this.state.canAttendValid ? <p className="form__error">Please select an option</p> : ''
+          !this.state.attendingValid ? <p className="form__error">Please select an option</p> : ''
         }
         <label className="form__field">
           Any other message for us? (optional)
