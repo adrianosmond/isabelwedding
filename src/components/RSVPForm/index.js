@@ -81,8 +81,14 @@ class RSVPForm extends Component {
         }
         <fieldset className="form__field" ref={(field) => { this.canAttendField = field }}>
           <legend>Will you be joining us?</legend>
-          <label className="form__control"><input type="radio" name="canAttend" value="yes" checked={this.state.canAttend==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} /> Yes <span role="img" aria-label="smiley face">&#x1F604;</span></label>
-          <label className="form__control"><input type="radio" name="canAttend" value="no" checked={this.state.canAttend==='no'} onChange={this.updateCanAttend.bind(this, 'no')} /> No <span role="img" aria-label="crying face">&#x1F62D;</span></label>
+          <label className="form__control">
+            <input className="form__radio" type="radio" name="canAttend" value="yes" checked={this.state.canAttend==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} />
+            Yes <span className="emoji" role="img" aria-label="smiley face">&#x1F604;</span>
+          </label>
+          <label className="form__control">
+            <input className="form__radio" type="radio" name="canAttend" value="no" checked={this.state.canAttend==='no'} onChange={this.updateCanAttend.bind(this, 'no')} />
+            No <span className="emoji" role="img" aria-label="crying face">&#x1F62D;</span>
+          </label>
         </fieldset>
         {
           !this.state.canAttendValid ? <p className="form__error">Please select an option</p> : ''

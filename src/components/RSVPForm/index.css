@@ -22,11 +22,18 @@
   font: inherit;
 }
 
+.form__radio {
+  position: relative;
+  top: -0.3em;
+  margin-right: 10px;
+}
+
 .form__input--textarea {
   height: 300px;
 }
 
 .form__button {
+  min-width: 200px;
   padding: 10px 20px;
   border: 0;
   font: inherit;

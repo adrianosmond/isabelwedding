@@ -60,6 +60,16 @@ html {
   margin-right: auto;
 }
 
+@media (min-width: 820px) {
+  html {
+    font-size: 18px;
+  }
+
+  .content {
+    max-width: 800px;
+  }
+}
+
 .page-header {
   min-height: calc(100vh - 150px);
   display: flex;
@@ -105,4 +115,9 @@ html {
 
 .page-body__text {
   margin-top: 40px;
+}
+
+.emoji {
+  position: relative;
+  top: 0.1em;
 }
