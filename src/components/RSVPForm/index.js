@@ -74,7 +74,7 @@ class RSVPForm extends Component {
       <form className="form" action={`https://formspree.io/${email}`} method="POST" onSubmit={this.submitForm.bind(this)}>
         <label className="form__field" ref={(field) => { this.nameField = field }}>
           Your name(s):
-          <input className="form__input" type="text" name="name" value={this.state.name} onChange={this.updateName.bind(this)} />
+          <input className="form__input" type="text" name="Name" value={this.state.name} onChange={this.updateName.bind(this)} />
         </label>
         {
           !this.state.nameValid ? <p className="form__error">Please enter your name(s)</p> : ''
@@ -82,12 +82,12 @@ class RSVPForm extends Component {
         <fieldset className="form__field" ref={(field) => { this.attendingField = field }}>
           <legend>Will you be joining us?</legend>
           <label className="form__control">
-            <input className="form__radio" type="radio" name="attending" value="yes" checked={this.state.attending==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} />
+            <input className="form__radio" type="radio" name="Attending" value="yes" checked={this.state.attending==='yes'} onChange={this.updateCanAttend.bind(this, 'yes')} />
             <span className="form__control-indicator"></span>
             Yes <span role="img" aria-label="smiley face">&#x1F604;</span>
           </label>
           <label className="form__control">
-            <input className="form__radio" type="radio" name="attending" value="no" checked={this.state.attending==='no'} onChange={this.updateCanAttend.bind(this, 'no')} />
+            <input className="form__radio" type="radio" name="Attending" value="no" checked={this.state.attending==='no'} onChange={this.updateCanAttend.bind(this, 'no')} />
             <span className="form__control-indicator"></span>
             No <span role="img" aria-label="crying face">&#x1F62D;</span>
           </label>
@@ -97,7 +97,7 @@ class RSVPForm extends Component {
         }
         <label className="form__field">
           Any other message for us? (optional)
-          <textarea className="form__input form__input--textarea" name="message" value={this.state.message}  onChange={this.updateMessage.bind(this)}></textarea>
+          <textarea className="form__input form__input--textarea" name="Message" value={this.state.message}  onChange={this.updateMessage.bind(this)}></textarea>
         </label>
         <input className="form__field form__button" type="submit" value="RSVP!"/>
       </form>
