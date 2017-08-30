@@ -96,7 +96,7 @@ class RSVPForm extends Component {
           !this.state.attendingValid ? <p className="form__error">Please select an option</p> : ''
         }
         <label className="form__field">
-          Any other message for us? (optional)
+          Any other message for us or dietary restrictions to tell us about? (optional)
           <textarea className="form__input form__input--textarea" name="Message" value={this.state.message}  onChange={this.updateMessage.bind(this)}></textarea>
         </label>
         <input className="form__field form__button" type="submit" value="RSVP!"/>

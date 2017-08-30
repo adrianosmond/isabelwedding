@@ -77,24 +77,29 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #caedff;
-  color: #977E68;
+  background: url('/wood-bg.jpg');
+  /*background: url('/r-and-i.jpg');*/
+  background-size: cover;
+  background-position: center center;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #000000;
 }
 
 .page-header__heading {
   line-height: 1;
   font-size: calc(18px + 10vw);
-  font-family: "Shadows Into Light";
+  font-family: "Fredericka the Great";
 }
 
 .page-header__date {
   margin-top: calc(20px + 1.25vw);
   margin-bottom: calc(20px + 1.25vw);
-  font-size: calc(20px + 1.25vw);
+  font-size: calc(20px + 2.5vw);
 }
 
 .page-header__address {
   line-height: 1.25;
+  font-size: calc(15px + 0.5vw);
 }
 
 @media (min-width: 820px) {
