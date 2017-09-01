@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RSVPForm from './components/RSVPForm';
+import GettingHere from './components/GettingHere';
 import './App.css';
 
 class App extends Component {
@@ -22,11 +23,7 @@ class App extends Component {
         </div>
         <div className="page-body">
           <div className="content">
-            <h2 className="page-body__heading">RSVP</h2>
-            <p className="page-body__text">
-              It'd be great if you could join us to celebrate our marriage on May the 5th 2018,
-              but please RSVP either way so that we can plan for the numbers.
-            </p>
+            <GettingHere />
             <RSVPForm />
           </div>
         </div>

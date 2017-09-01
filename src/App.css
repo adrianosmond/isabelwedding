@@ -53,6 +53,15 @@ html {
   font-family: "Raleway", Arial, sans-serif;
 }
 
+body {
+	background-color: #b7cfd5;
+	color: #3a302b;
+}
+
+a {
+	color: inherit;
+}
+
 .content {
   padding: 20px;
   max-width: 600px;
@@ -77,12 +86,14 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('/wood-bg.jpg');
+  background: linear-gradient(rgba(58,48,43, 0.3), rgba(58,48,43, 0.3)),
+							url('/wood-bg.jpg');
+  /*background: url('/wood-bg.jpg');*/
   /*background: url('/r-and-i.jpg');*/
   background-size: cover;
   background-position: center center;
   color: #FFFFFF;
-  text-shadow: 0 0 5px #000000;
+  /*text-shadow: 0 0 5px #000000;*/
 }
 
 .page-header__heading {
@@ -109,7 +120,12 @@ html {
 }
 
 .page-body {
+	border-top: 4px solid #8491a3;
   text-align: left;
+}
+
+.page-body__section:not(:first-child) {
+	margin-top: 80px;
 }
 
 .page-body__heading {
@@ -118,6 +134,25 @@ html {
   font-size: 30px;
 }
 
+.page-body__heading:not(:first-child) {
+	margin-top: 80px;
+}
+
 .page-body__text {
   margin-top: 40px;
+}
+
+.page-body__image {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.list {
+	margin-top: 20px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.no-break {
+	white-space: nowrap;
 }
