@@ -35,6 +35,10 @@ class RSVPForm extends Component {
       ScrollTo.scrollTo(this.nameField, 10)
     } else if (!this.state.attendingValid) {
       ScrollTo.scrollTo(this.attendingField, 10)
+    } else if (!this.state.childrenValid) {
+      ScrollTo.scrollTo(this.childrenField, 10)
+    } else if (!this.state.childrensMenuValid) {
+      ScrollTo.scrollTo(this.childrensMenuField, 10)
     }
   }
 
@@ -90,7 +94,8 @@ class RSVPForm extends Component {
   }
 
   validateChildren() {
-    const childrenValid = this.state.children !== '';
+    const childrenValid = this.state.attending !== 'yes' || this.state.children !== '';
+    console.log("C? ", childrenValid);
     this.setState({
       childrenValid
     });
@@ -114,7 +119,7 @@ class RSVPForm extends Component {
 
   render() {
     return (
-      <section className="page-body__section">
+      <div className="content">
         <h2 className="page-body__heading">RSVP</h2>
         <p className="page-body__text">
           It'd be great if you could join us to celebrate our marriage on May the 5th 2018.
@@ -145,56 +150,61 @@ class RSVPForm extends Component {
             !this.state.attendingValid ? <p className="form__error">Please select an option</p> : ''
           }
 
-          <label className="form__field">
-            Please list any dietary requirements
-            <textarea className="form__input form__input--textarea" name="Dietary_Requirements" value={this.state.dietaryRequirements}  onChange={this.updateDietaryRequirements.bind(this)}></textarea>
-          </label>
-
-          <fieldset className="form__field" ref={(field) => { this.attendingField = field }}>
-            <legend>Will you be joining bringing children?</legend>
-            <label className="form__control">
-              <input className="form__radio" type="radio" name="Bringing_Children" value="yes" checked={this.state.children==='yes'} onChange={this.updateChildren.bind(this, 'yes')} />
-              <span className="form__control-indicator"></span>
-              Yes
-            </label>
-            <label className="form__control">
-              <input className="form__radio" type="radio" name="Bringing_Children" value="no" checked={this.state.children==='no'} onChange={this.updateChildren.bind(this, 'no')} />
-              <span className="form__control-indicator"></span>
-              No / N/A
-            </label>
-          </fieldset>
-          {
-            !this.state.childrenValid ? <p className="form__error">Please select an option</p> : ''
-          }
-          {
-            this.state.children === 'yes' ?
+          {this.state.attending === 'yes' ?
             <div>
-              <fieldset className="form__field" ref={(field) => { this.attendingField = field }}>
-                <legend>Will they require a meal from the children's menu?</legend>
+              <label className="form__field">
+                Please list any dietary requirements
+                <textarea className="form__input form__input--textarea" name="Dietary_Requirements" value={this.state.dietaryRequirements}  onChange={this.updateDietaryRequirements.bind(this)}></textarea>
+              </label>
+
+              <fieldset className="form__field" ref={(field) => { this.childrenField = field }}>
+                <legend>Will you be joining bringing children?</legend>
                 <label className="form__control">
-                  <input className="form__radio" type="radio" name="Childrens_Menu" value="yes" checked={this.state.childrensMenu==='yes'} onChange={this.updateChildrensMenu.bind(this, 'yes')} />
+                  <input className="form__radio" type="radio" name="Bringing_Children" value="yes" checked={this.state.children==='yes'} onChange={this.updateChildren.bind(this, 'yes')} />
                   <span className="form__control-indicator"></span>
                   Yes
                 </label>
                 <label className="form__control">
-                  <input className="form__radio" type="radio" name="Childrens_Menu" value="no" checked={this.state.childrensMenu==='no'} onChange={this.updateChildrensMenu.bind(this, 'no')} />
+                  <input className="form__radio" type="radio" name="Bringing_Children" value="no" checked={this.state.children==='no'} onChange={this.updateChildren.bind(this, 'no')} />
                   <span className="form__control-indicator"></span>
-                  No
+                  No / N/A
                 </label>
               </fieldset>
               {
-                !this.state.childrensMenuValid ? <p className="form__error">Please select an option</p> : ''
+                !this.state.childrenValid ? <p className="form__error">Please select an option</p> : ''
+              }
+              {
+                this.state.children === 'yes' ?
+                <div>
+                  <fieldset className="form__field" ref={(field) => { this.childrensMenuField = field }}>
+                    <legend>Will they require a meal from the children's menu?</legend>
+                    <label className="form__control">
+                      <input className="form__radio" type="radio" name="Childrens_Menu" value="yes" checked={this.state.childrensMenu==='yes'} onChange={this.updateChildrensMenu.bind(this, 'yes')} />
+                      <span className="form__control-indicator"></span>
+                      Yes
+                    </label>
+                    <label className="form__control">
+                      <input className="form__radio" type="radio" name="Childrens_Menu" value="no" checked={this.state.childrensMenu==='no'} onChange={this.updateChildrensMenu.bind(this, 'no')} />
+                      <span className="form__control-indicator"></span>
+                      No
+                    </label>
+                  </fieldset>
+                  {
+                    !this.state.childrensMenuValid ? <p className="form__error">Please select an option</p> : ''
+                  }
+                </div>
+                : ''
               }
             </div>
-             : ''
-          }
+          : null}
+
           <label className="form__field">
             Any other message for us? (optional)
             <textarea className="form__input form__input--textarea" name="Message" value={this.state.message}  onChange={this.updateMessage.bind(this)}></textarea>
           </label>
           <input className="form__field form__button" type="submit" value="RSVP!"/>
         </form>
-      </section>
+      </div>
     );
   }
 }
