@@ -11,6 +11,16 @@ import RSVPForm from './components/RSVPForm';
 import './App.css';
 
 class App extends Component {
+  state = {
+    firstRoute: true
+  }
+
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({firstRoute: false});
+    }, 300)
+  }
+
   render() {
     return (
       <Router>
@@ -30,9 +40,9 @@ class App extends Component {
             </div>
           </div>
           <div className="page-body">
-            <Route exact path="/" render={(props) => (<Tabs {...props} selected="wedding"/>)} />
-            <Route path="/rsvp" render={(props) => (<Tabs {...props} selected="rsvp"/>)} />
-            <Route path="/getting-here" render={(props) => (<Tabs {...props} selected="getting-here"/>)} />
+            <Route exact path="/" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="wedding"/>)} />
+            <Route path="/rsvp" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="rsvp"/>)} />
+            <Route path="/getting-here" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="getting-here"/>)} />
             <Route exact path="/" component={TheWedding}/>
             <Route path="/getting-here" component={GettingHere}/>
             <Route path="/rsvp" component={RSVPForm}/>
