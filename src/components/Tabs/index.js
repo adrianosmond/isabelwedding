@@ -6,9 +6,13 @@ class Tabs extends Component {
   render() {
     return (
       <div className="tabs">
-        <Link className="tabs__tab" to="/">The Wedding</Link>
-        <Link className="tabs__tab" to="/getting-here">Getting Here</Link>
-        <Link className="tabs__tab" to="/rsvp">RSVP</Link>
+        <div className="content">
+          <div className="tabs__wrapper">
+            <Link className={this.props.selected === "wedding" ? "tabs__tab tabs__tab--selected" : "tabs__tab"} to="/">The Wedding</Link>
+            <Link className={this.props.selected === "rsvp" ? "tabs__tab tabs__tab--selected" : "tabs__tab"} to="/rsvp">RSVP</Link>
+            <Link className={this.props.selected === "getting-here" ? "tabs__tab tabs__tab--selected" : "tabs__tab"} to="/getting-here">Getting Here</Link>
+          </div>
+        </div>
       </div>
     )
   }

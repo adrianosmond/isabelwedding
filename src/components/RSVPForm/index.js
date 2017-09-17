@@ -122,7 +122,7 @@ class RSVPForm extends Component {
       <div className="content">
         <h2 className="page-body__heading">RSVP</h2>
         <p className="page-body__text">
-          It'd be great if you could join us to celebrate our marriage on May the 5th 2018.
+          It would be great if you could join us to celebrate our marriage on May the 5th 2018.
           Please RSVP by the 31st of January 2018 so that we can plan for the numbers.
         </p>
         <form className="form" action={`https://formspree.io/${email}`} method="POST" onSubmit={this.submitForm.bind(this)}>

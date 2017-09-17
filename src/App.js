@@ -30,7 +30,9 @@ class App extends Component {
             </div>
           </div>
           <div className="page-body">
-            <Tabs />
+            <Route exact path="/" render={(props) => (<Tabs {...props} selected="wedding"/>)} />
+            <Route path="/rsvp" render={(props) => (<Tabs {...props} selected="rsvp"/>)} />
+            <Route path="/getting-here" render={(props) => (<Tabs {...props} selected="getting-here"/>)} />
             <Route exact path="/" component={TheWedding}/>
             <Route path="/getting-here" component={GettingHere}/>
             <Route path="/rsvp" component={RSVPForm}/>

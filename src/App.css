@@ -55,6 +55,7 @@ html {
 
 body {
 	background-color: #b7cfd5;
+	background-image: url("/bg-2.jpg");
 	color: #3a302b;
 }
 
@@ -120,8 +121,8 @@ a {
 }
 
 .page-body {
-	border-top: 4px solid #8491a3;
   text-align: left;
+	padding-bottom: 40px;
 }
 
 .page-body__section:not(:first-child) {
@@ -129,20 +130,53 @@ a {
 }
 
 .page-body__heading {
-  margin-top: 40px;
+  margin-top: 20px;
   line-height: 1;
   font-size: 30px;
 }
 
 .page-body__heading--secondary {
-	margin-top: 40px;
-	margin-bottom: -40px;
+	margin-top: 20px;
+	margin-bottom: -20px;
   line-height: 1;
   font-size: 24px;
 }
 
 .page-body__heading:not(:first-child) {
-	margin-top: 80px;
+	margin-top: 40px;
+}
+
+@media (min-width: 600px) {
+	.page-body__heading {
+		margin-top: 40px;
+	}
+	.page-body__heading--secondary {
+		margin-top: 40px;
+	}
+	.page-body__heading:not(:first-child) {
+		position: relative;
+		margin-top: 120px;
+	}
+	.page-body__heading:not(:first-child):before {
+		content: "";
+		position: absolute;
+		top: -80px;
+		left: 50%;
+		margin-left: -188px;
+		height: 40px;
+		width: 376px;
+		background-image: url("/divider-3.png");
+		background-size: 100%;
+	}
+}
+
+@media (min-width: 820px) {
+	.page-body__heading:not(:first-child) {
+		margin-top: 200px;
+	}
+	.page-body__heading:not(:first-child):before {
+		top: -120px;
+	}
 }
 
 .page-body__text {

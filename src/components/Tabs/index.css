@@ -1,0 +1,67 @@
+.tabs {
+  background-color: #ffffff;
+  border-bottom: 4px solid #cce2e8;
+}
+
+
+.tabs__tab {
+  display: block;
+  margin-top: 10px;
+  font-family: "Fredericka the Great";
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+.tabs__tab:first-child {
+  margin-top: 0;
+}
+
+.tabs__tab--selected {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .tabs__wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .tabs__tab {
+    position: relative;
+    margin-top: 0;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 820px) {
+  .tabs__tab {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 24px;
+  }
+
+  .tabs__tab--selected {
+    text-decoration: none;
+  }
+
+  .tabs__tab--selected:before,
+  .tabs__tab--selected:after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    width: 33px;
+    height: 20px;
+    background-image: url("/selected-tab.jpg");
+    background-size: 100%;
+  }
+
+  .tabs__tab--selected:before {
+    left: 0;
+  }
+
+  .tabs__tab--selected:after {
+    right: 0;
+    transform: scaleX(-1);
+  }
+}
