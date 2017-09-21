@@ -7,13 +7,11 @@ class Home extends Component {
       <div className="content">
         <img src="/r-and-i.jpg" className="page-body__image" alt="Long Furlong Barn" />
         <p className="page-body__text">
-          Hi there,<br/>
+          Hi there,<br/><br/>
           Welcome to our website and thanks for dropping by! We're looking forward to our wedding
           and hope you are too. You should find any information you need on this website so that
           you're ready for our big day. Don't forget to use the online form to RSVP by the end of
-          January - we hope you can make it!
-        </p>
-        <p className="page-body__text">
+          January - we hope you can make it!<br/><br/>
           Love Rich and Izzy
         </p>
       </div>

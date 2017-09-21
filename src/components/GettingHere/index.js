@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import MapMarker from '../MapMarker';
 import './index.css';
 
 class GettingHere extends Component {
@@ -6,6 +8,14 @@ class GettingHere extends Component {
     return (
       <div className="content">
         <h2 className="page-body__heading">Getting here by car</h2>
+        <div className="map">
+          <GoogleMapReact
+            center={{lat: 50.856771, lng: -0.44162}}
+            zoom={12}
+          >
+            <MapMarker lat={50.856771} lng={-0.44162} />
+          </GoogleMapReact>
+        </div>
         <p className="page-body__text">
           The venue is located on Long Furlong/A280. Sat Nav users can use the postcode <span className="no-break">BN13 3XN</span>.
           Look out for the brick sign below:
