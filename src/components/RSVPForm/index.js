@@ -158,7 +158,7 @@ class RSVPForm extends Component {
               </label>
 
               <fieldset className="form__field" ref={(field) => { this.childrenField = field }}>
-                <legend>Will you be joining bringing children?</legend>
+                <legend>Will you be bringing children?</legend>
                 <label className="form__control">
                   <input className="form__radio" type="radio" name="Bringing_Children" value="yes" checked={this.state.children==='yes'} onChange={this.updateChildren.bind(this, 'yes')} />
                   <span className="form__control-indicator"></span>
