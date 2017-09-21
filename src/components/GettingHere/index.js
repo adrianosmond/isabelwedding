@@ -10,6 +10,7 @@ class GettingHere extends Component {
         <h2 className="page-body__heading">Getting here by car</h2>
         <div className="map">
           <GoogleMapReact
+            bootstrapURLKeys={{key: 'AIzaSyDVBkIWGyEPCGGshXLcOjBR8ULWOmiQHgE'}}
             center={{lat: 50.856771, lng: -0.44162}}
             zoom={12}
           >
