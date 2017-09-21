@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Tabs from './components/Tabs';
+import Home from './components/Home';
 import TheWedding from './components/TheWedding';
 import GettingHere from './components/GettingHere';
 import RSVPForm from './components/RSVPForm';
@@ -40,10 +41,12 @@ class App extends Component {
             </div>
           </div>
           <div className="page-body">
-            <Route exact path="/" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="wedding"/>)} />
+            <Route exact path="/" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="home"/>)} />
+            <Route exact path="/wedding" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="wedding"/>)} />
             <Route path="/rsvp" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="rsvp"/>)} />
             <Route path="/getting-here" render={(props) => (<Tabs {...props} firstRoute={this.state.firstRoute} selected="getting-here"/>)} />
-            <Route exact path="/" component={TheWedding}/>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/wedding" component={TheWedding}/>
             <Route path="/getting-here" component={GettingHere}/>
             <Route path="/rsvp" component={RSVPForm}/>
           </div>

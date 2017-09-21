@@ -3,6 +3,12 @@
   border-bottom: 4px solid #cce2e8;
 }
 
+.tabs__wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 900px;
+}
 
 .tabs__tab {
   display: block;
@@ -33,7 +39,7 @@
   }
 }
 
-@media (min-width: 820px) {
+@media (min-width: 900px) {
   .tabs__tab {
     padding-left: 40px;
     padding-right: 40px;

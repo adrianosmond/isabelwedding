@@ -17,7 +17,8 @@ class TheWedding extends Component {
           Clapham,<br/>
           Worthing,<br/>
           West Sussex,<br/>
-          BN13 3XN
+          BN13 3XN<br/>
+          <a href="https://goo.gl/maps/C2CZStZZ9672" target="_blank" rel="noopener noreferrer">view on a map</a>
         </p>
 
         <h2 className="page-body__heading">Timings</h2>
